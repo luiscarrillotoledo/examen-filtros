@@ -1,0 +1,35 @@
+DIAGRAMA DE COMPONENTES:
+@startuml
+package Controler{
+ class ventasControler {
+
+ }
+ }
+package Producer{
+class dFiltros{
+
+}
+}
+package Filtros{
+class CheckDuplicado{
+}
+class MapCliente{
+}
+class MapVentaT{
+}
+class DetectarCliente{
+}
+}
+package tablaven_depuradas{
+class tablafinal{
+}
+}
+ventasControler-> dFiltros:pipe
+dFiltros -> CheckDuplicado:pipe
+CheckDuplicado --> MapCliente:pipe
+MapCliente --> MapVentaT:pipe
+MapVentaT -> tablafinal:pipe
+
+
+
+@enduml
